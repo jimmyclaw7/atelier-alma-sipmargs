@@ -39,7 +39,7 @@
     ===================== */
     .hero {
       min-height: 100svh;
-      background: url('photos/banner_image0.png') center center / cover no-repeat;
+      background: url('photos/banner_new_image0.png') center center / cover no-repeat;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -55,7 +55,7 @@
       position: absolute;
       inset: 0;
       pointer-events: none;
-      background: rgba(0,0,0,0.35);
+      background: rgba(0,0,0,0.08);
       z-index: 0;
     }
 
@@ -70,13 +70,14 @@
 
     .hero-logo {
       width: 100%;
-      max-width: 320px;
-      max-height: 120px;
+      max-width: 360px;
+      max-height: 90px;
       object-fit: contain;
       object-position: center;
       display: block;
-      margin-bottom: clamp(20px, 4vw, 36px);
-      filter: invert(1); /* white logo on photo bg */
+      margin-bottom: 16px;
+      /* logo has built-in whitespace -- use negative margin to pull it closer */
+      margin-top: -8px;
     }
 
     .hero-headline {
@@ -84,17 +85,17 @@
       font-size: clamp(2.4rem, 9vw, 7rem);
       line-height: 1.0;
       letter-spacing: 0.02em;
-      color: var(--white);
+      color: var(--black);
       text-transform: uppercase;
       margin-bottom: 20px;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+      text-shadow: 0 1px 4px rgba(255,255,255,0.5);
     }
 
     .hero-sub {
       font-family: 'Inter', sans-serif;
       font-weight: 300;
       font-size: clamp(0.9rem, 2vw, 1.1rem);
-      color: rgba(255,255,255,0.8);
+      color: rgba(0,0,0,0.6);
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-bottom: clamp(32px, 5vw, 56px);
@@ -514,7 +515,7 @@
     <div class="hero-content">
       <img
         class="hero-logo"
-        src="photos/logo_image0.png"
+        src="photos/logo_cropped_image0.jpeg"
         alt="Sip Margs x Atelier Alma Clay Bar at Coachella"
       />
       <h1 class="hero-headline">You Made That At Coachella?</h1>
