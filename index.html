@@ -45,7 +45,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: clamp(40px, 7vw, 100px) clamp(20px, 5vw, 80px);
+      padding: clamp(60px, 9vw, 140px) clamp(20px, 5vw, 80px);
       position: relative;
       overflow: hidden;
     }
@@ -152,7 +152,7 @@
     }
 
     .pitch-inner {
-      max-width: 1080px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
@@ -197,7 +197,7 @@
     .pitch-col p {
       font-family: 'Inter', sans-serif;
       font-weight: 300;
-      font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+      font-size: clamp(0.95rem, 1.6vw, 1.1rem);
       color: rgba(255,255,255,0.85);
       line-height: 1.75;
     }
@@ -323,7 +323,7 @@
     }
 
     .activation-inner {
-      max-width: 1080px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
@@ -340,8 +340,12 @@
 
     .cards-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .cards-grid { grid-template-columns: 1fr 1fr; }
     }
 
     .card {
@@ -398,7 +402,7 @@
     .card p {
       font-family: 'Inter', sans-serif;
       font-weight: 400;
-      font-size: clamp(0.83rem, 1.4vw, 0.93rem);
+      font-size: clamp(0.88rem, 1.4vw, 1rem);
       color: rgba(0,0,0,0.72);
       line-height: 1.7;
     }
@@ -412,7 +416,7 @@
     }
 
     .why-inner {
-      max-width: 1080px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
