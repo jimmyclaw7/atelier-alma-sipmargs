@@ -145,6 +145,52 @@
       padding-top: clamp(20px, 3vw, 36px);
     }
 
+    /* ─── SECTION 2.5: WHO WE ARE ─── */
+    #who-we-are {
+      background: #000;
+      padding: clamp(40px, 7vw, 80px) clamp(20px, 5vw, 80px);
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .who-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(0.75rem, 1.6vw, 0.9rem);
+      letter-spacing: 0.18em;
+      color: var(--gray);
+      margin-bottom: clamp(20px, 3vw, 32px);
+      text-transform: uppercase;
+    }
+
+    .who-body {
+      max-width: 680px;
+    }
+
+    .who-body p {
+      font-size: clamp(0.9rem, 2.2vw, 1.05rem);
+      color: var(--cream);
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+
+    .who-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .who-name {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--clay);
+    }
+
+    .who-last {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      letter-spacing: 0.05em;
+      color: var(--yellow);
+      margin-top: 24px;
+    }
+
     /* ─── SECTION 3: EXPERIENCES ─── */
     #experiences {
       background: var(--bg);
@@ -188,12 +234,22 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.04);
     }
 
     .card-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.15) 55%);
+      background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.15) 55%);
+      transition: background 0.3s ease;
+    }
+
+    .card:hover .card-overlay {
+      background: linear-gradient(to top, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.35) 55%);
     }
 
     .card-text {
@@ -210,7 +266,7 @@
       font-size: clamp(1rem, 2.5vw, 1.4rem);
       letter-spacing: 0.06em;
       color: #fff;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .card-desc {
@@ -218,6 +274,11 @@
       color: rgba(255,255,255,0.75);
       line-height: 1.5;
       font-weight: 300;
+    }
+
+    /* Charm card always shows full desc */
+    .card.card-featured .card-desc {
+      color: rgba(255,255,255,0.88);
     }
 
     /* ─── SECTION 4: STATS ─── */
@@ -351,24 +412,34 @@
       </div>
     </div>
     <p class="pitch-statement">
-      At Coachella, your guests sip while they sculpt. They leave with something handmade, branded, and theirs forever. That's the activation.
+      At Coachella, your guests drink Sip Margs and make something. Not merch they'll forget. A hand-painted ceramic piece with your logo, your colors, your vibe. It goes home. It gets photographed. It starts conversations for months.
     </p>
+  </section>
+
+  <!-- SECTION 2.5: WHO WE ARE -->
+  <section id="who-we-are">
+    <p class="who-label">Who We Are</p>
+    <div class="who-body">
+      <p>Atelier Alma is a Miami-based ceramic studio founded by artist <span class="who-name">Natalie Valencia</span>, whose work has been featured at Art Basel Miami and Art Basel Switzerland. She brings that Art Basel-trained eye to every brand event she creates. Polished, customized, and built around the audience.</p>
+      <p>15+ events across Miami. Collaborations in Los Angeles. The entire experience travels.</p>
+      <div class="who-last">Next stop: Coachella.</div>
+    </div>
   </section>
 
   <!-- SECTION 3: EXPERIENCES -->
   <section id="experiences">
     <p class="section-label">The Experiences</p>
     <div class="cards-grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=900&q=80" alt="Charm workshop" loading="lazy" />
+      <div class="card card-featured">
+        <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80" alt="Charm workshop" loading="lazy" />
         <div class="card-overlay"></div>
         <div class="card-text">
           <div class="card-title">CHARM WORKSHOP</div>
-          <p class="card-desc">Mini margarita charms. Guests paint, guests keep.</p>
+          <p class="card-desc">Guests paint and personalize their own Sip Margs charm to take home. Think: mini margarita glasses with a salt rim, lime wedge slices, a tiny cactus in a terracotta pot, or a yellow 'SIP MORE' banner charm. Every single one different. Every single one Instagrammable.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1604686100856-9bdf6fd84b20?w=900&q=80" alt="Lighter casings" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Lighter casings" loading="lazy" />
         <div class="card-overlay"></div>
         <div class="card-text">
           <div class="card-title">LIGHTER CASINGS</div>
@@ -376,7 +447,7 @@
         </div>
       </div>
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Trinket dishes" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1577640905050-3e40ececd2a5?w=600&q=80" alt="Trinket dishes" loading="lazy" />
         <div class="card-overlay"></div>
         <div class="card-text">
           <div class="card-title">TRINKET DISHES</div>
@@ -384,7 +455,7 @@
         </div>
       </div>
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?w=1200&q=80" alt="Clay sculpting" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1604686100856-9bdf6fd84b20?w=600&q=80" alt="Clay sculpting" loading="lazy" />
         <div class="card-overlay"></div>
         <div class="card-text">
           <div class="card-title">CLAY SCULPTING</div>
@@ -417,8 +488,8 @@
     <div class="bg"></div>
     <div class="overlay"></div>
     <div class="content">
-      <div class="cta-headline">LET'S MAKE IT HAPPEN</div>
-      <p class="cta-sub">We handle everything. You show up and sip.</p>
+      <div class="cta-headline">READY TO MAKE HISTORY AT COACHELLA?</div>
+      <p class="cta-sub">Atelier Alma handles every detail. You just show up and pour the margs.</p>
       <a class="cta-btn" href="mailto:natalie@atelieralma.com">GET IN TOUCH &rarr;</a>
       <p class="cta-handles">@byatelieralma &nbsp;&nbsp; @sipmargs</p>
     </div>
