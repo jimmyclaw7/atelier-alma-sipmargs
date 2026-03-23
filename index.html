@@ -227,6 +227,31 @@
       overflow: hidden;
     }
 
+    .natalie-header {
+      text-align: center;
+      padding: clamp(48px, 7vw, 80px) clamp(20px, 5vw, 80px) 0;
+    }
+
+    .natalie-kicker {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 10px;
+    }
+
+    .natalie-title {
+      font-family: 'Fjalla One', sans-serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: clamp(32px, 5vw, 56px);
+    }
+
     .natalie-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -571,6 +596,10 @@
 
   <!-- SECTION 3: NATALIE -->
   <section class="natalie" id="natalie">
+    <div class="natalie-header">
+      <p class="natalie-kicker">The Studio Behind It</p>
+      <h2 class="natalie-title">Meet Atelier Alma</h2>
+    </div>
     <div class="natalie-inner">
       <div class="natalie-photo">
         <img
