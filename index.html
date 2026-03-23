@@ -3,46 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atelier Alma × Sip Margs — Coachella 2025</title>
+  <title>Atelier Alma × Sip Margs — Coachella Activation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital@1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --black: #000000;
+      --bg: #0a0a0a;
       --yellow: #F5D832;
-      --white: #FFFFFF;
       --cream: #F0EBE3;
       --clay: #D4A982;
-      --gray: #888888;
+      --gray: #888;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
-      background: var(--black);
-      color: var(--white);
+      background: var(--bg);
+      color: var(--cream);
       font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* ─── HERO ─────────────────────────────────────────────────── */
+    /* ─── SECTION 1: HERO ─── */
     #hero {
       position: relative;
-      height: 100vh;
-      min-height: 600px;
+      height: 80vh;
+      min-height: 500px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
       overflow: hidden;
     }
@@ -50,448 +44,218 @@
     #hero .bg {
       position: absolute;
       inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?w=1600&q=80');
+      background-image: url('https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=1600&q=80');
       background-size: cover;
       background-position: center;
-      z-index: 0;
     }
 
     #hero .overlay {
       position: absolute;
       inset: 0;
       background: rgba(0, 0, 0, 0.62);
-      z-index: 1;
     }
 
-    #hero nav {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 28px 40px;
-      z-index: 10;
-    }
-
-    #hero nav span {
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--yellow);
-    }
-
-    .hero-content {
+    #hero .content {
       position: relative;
-      z-index: 5;
+      z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 4px;
     }
 
-    .hero-words {
+    .hero-word {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(4rem, 14vw, 9rem);
-      line-height: 0.9;
-      color: var(--white);
+      font-size: clamp(4rem, 14vw, 8rem);
+      color: #fff;
+      line-height: 0.92;
       letter-spacing: 0.02em;
     }
 
-    .hero-words span {
-      display: block;
-    }
-
     .hero-sub {
-      margin-top: 28px;
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      font-size: clamp(0.85rem, 2.2vw, 1.1rem);
       color: var(--cream);
-      letter-spacing: 0.04em;
+      opacity: 0.85;
+      margin-top: 20px;
+      letter-spacing: 0.03em;
     }
 
     .scroll-arrow {
       position: absolute;
-      bottom: 36px;
+      bottom: 28px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 5;
+      z-index: 2;
       animation: bounce 2s infinite;
-      color: var(--yellow);
-      font-size: 1.6rem;
+      color: #fff;
+      opacity: 0.6;
+      font-size: 1.5rem;
       line-height: 1;
+      text-decoration: none;
     }
 
     @keyframes bounce {
       0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(10px); }
+      50% { transform: translateX(-50%) translateY(8px); }
     }
 
-    /* ─── SPLIT INTRO ───────────────────────────────────────────── */
-    #split {
+    /* ─── SECTION 2: PITCH ─── */
+    #pitch {
+      background: #000;
+      padding: clamp(40px, 7vw, 80px) clamp(20px, 5vw, 80px);
+    }
+
+    .pitch-cols {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: 80vh;
+      gap: clamp(24px, 4vw, 60px);
+      margin-bottom: clamp(24px, 4vw, 48px);
     }
 
-    .split-left {
-      background: var(--black);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: clamp(40px, 6vw, 100px);
+    @media (max-width: 600px) {
+      .pitch-cols { grid-template-columns: 1fr; gap: 20px; }
     }
 
-    .split-label {
+    .pitch-col-label {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-      color: var(--yellow);
-      letter-spacing: 0.04em;
-      margin-bottom: 20px;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
     }
 
-    .split-left p {
-      font-family: 'Inter', sans-serif;
+    .pitch-col-label.yellow { color: var(--yellow); }
+    .pitch-col-label.clay { color: var(--clay); }
+
+    .pitch-col p {
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      color: var(--gray);
+      line-height: 1.6;
       font-weight: 300;
-      font-size: clamp(0.9rem, 1.4vw, 1.05rem);
-      line-height: 1.75;
-      color: var(--cream);
-      max-width: 420px;
     }
 
-    .stamp {
-      display: inline-block;
-      margin-top: 32px;
-      padding: 8px 16px;
-      border: 2px solid var(--yellow);
-      color: var(--yellow);
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 0.65rem;
-      letter-spacing: 0.22em;
+    .pitch-statement {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.05rem, 2.8vw, 1.5rem);
+      color: var(--cream);
+      line-height: 1.55;
+      border-top: 1px solid #222;
+      padding-top: clamp(20px, 3vw, 36px);
+    }
+
+    /* ─── SECTION 3: EXPERIENCES ─── */
+    #experiences {
+      background: var(--bg);
+      padding: clamp(32px, 5vw, 64px) clamp(20px, 4vw, 60px);
+    }
+
+    .section-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(0.75rem, 1.6vw, 0.9rem);
+      letter-spacing: 0.18em;
+      color: var(--gray);
+      margin-bottom: clamp(16px, 3vw, 28px);
       text-transform: uppercase;
     }
 
-    .split-right {
-      position: relative;
-      min-height: 500px;
-      overflow: hidden;
-    }
-
-    .split-right .bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .split-right .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(212, 169, 130, 0.35);
-    }
-
-    .split-right-content {
-      position: relative;
-      z-index: 2;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: clamp(30px, 5vw, 80px);
-    }
-
-    .split-right-content .split-label {
-      color: var(--white);
-    }
-
-    .split-right-content p {
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      font-size: clamp(0.9rem, 1.4vw, 1.05rem);
-      line-height: 1.75;
-      color: var(--cream);
-      max-width: 420px;
-    }
-
-    /* ─── CONCEPT (full bleed) ──────────────────────────────────── */
-    #concept {
-      position: relative;
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    #concept .bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?w=800&q=80');
-      background-size: cover;
-      background-position: center;
-      z-index: 0;
-    }
-
-    #concept .overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(245,216,50,0.55) 0%, rgba(0,0,0,0.80) 100%);
-      z-index: 1;
-    }
-
-    #concept .content {
-      position: relative;
-      z-index: 5;
-      padding: 0 clamp(20px, 5vw, 80px);
-      max-width: 900px;
-    }
-
-    #concept .big-headline {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3rem, 9vw, 7.5rem);
-      color: var(--white);
-      line-height: 0.9;
-      letter-spacing: 0.02em;
-      margin-bottom: 24px;
-    }
-
-    #concept .tagline {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(1.4rem, 3.5vw, 2.5rem);
-      color: var(--yellow);
-      letter-spacing: 0.2em;
-      margin-bottom: 30px;
-    }
-
-    #concept .body {
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-      line-height: 1.8;
-      color: var(--cream);
-      max-width: 620px;
-      margin: 0 auto;
-    }
-
-    /* ─── EXPERIENCES ───────────────────────────────────────────── */
-    #experiences {
-      padding: 0;
-    }
-
-    #experiences .section-header {
-      background: var(--black);
-      padding: clamp(40px, 6vw, 80px) clamp(20px, 5vw, 80px) 0;
-    }
-
-    #experiences .section-header h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2rem, 5vw, 4rem);
-      color: var(--white);
-      letter-spacing: 0.04em;
-    }
-
-    #experiences .section-header p {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      color: var(--gray);
-      font-size: 1rem;
-      margin-top: 8px;
-    }
-
-    .exp-grid {
+    .cards-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      min-height: 80vh;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(10px, 2vw, 20px);
     }
 
-    .exp-card {
+    @media (min-width: 800px) {
+      .cards-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .card {
       position: relative;
-      min-height: 600px;
+      aspect-ratio: 3/4;
       overflow: hidden;
-      cursor: pointer;
+      border-radius: 4px;
     }
 
-    .exp-card .bg {
+    @media (max-width: 600px) {
+      .card { aspect-ratio: 9/10; }
+    }
+
+    .card img {
       position: absolute;
       inset: 0;
-      background-size: cover;
-      background-position: center;
-      transition: transform 0.6s ease;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .exp-card:hover .bg {
-      transform: scale(1.05);
-    }
-
-    .exp-card .overlay {
+    .card-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.1) 60%);
+      background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.15) 55%);
     }
 
-    .exp-card .text {
+    .card-text {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      padding: clamp(24px, 3vw, 40px);
-      z-index: 5;
+      padding: clamp(12px, 2.5vw, 20px);
+      z-index: 2;
     }
 
-    .exp-num {
+    .card-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.5rem, 4vw, 4rem);
-      color: var(--yellow);
-      line-height: 1;
-      margin-bottom: 8px;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      letter-spacing: 0.06em;
+      color: #fff;
+      margin-bottom: 4px;
     }
 
-    .exp-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(1.4rem, 2.2vw, 2rem);
-      color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 10px;
-    }
-
-    .exp-body {
-      font-family: 'Inter', sans-serif;
+    .card-desc {
+      font-size: clamp(0.7rem, 1.5vw, 0.82rem);
+      color: rgba(255,255,255,0.75);
+      line-height: 1.5;
       font-weight: 300;
-      font-size: clamp(0.8rem, 1.1vw, 0.9rem);
-      line-height: 1.65;
-      color: var(--cream);
     }
 
-    /* ─── STATS ─────────────────────────────────────────────────── */
+    /* ─── SECTION 4: STATS ─── */
     #stats {
-      background: var(--black);
-      padding: clamp(60px, 10vw, 140px) clamp(20px, 5vw, 80px);
+      background: #000;
+      padding: clamp(36px, 6vw, 70px) clamp(20px, 5vw, 80px);
     }
 
-    #stats .label {
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 0.7rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--yellow);
-      margin-bottom: 60px;
-    }
-
-    .stats-grid {
+    .stats-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
+      gap: clamp(20px, 4vw, 40px);
+      text-align: center;
     }
 
-    .stat-item {
-      border-top: 1px solid #222;
-      padding-top: 32px;
+    @media (max-width: 500px) {
+      .stats-row { grid-template-columns: 1fr; gap: 28px; }
     }
 
-    .stat-num {
+    .stat-number {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(4rem, 10vw, 8rem);
+      font-size: clamp(3rem, 9vw, 5.5rem);
       color: var(--yellow);
-      line-height: 0.9;
-      margin-bottom: 16px;
+      line-height: 1;
     }
 
-    .stat-desc {
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      font-size: clamp(0.85rem, 1.3vw, 1rem);
-      line-height: 1.65;
+    .stat-label {
+      font-size: clamp(0.75rem, 1.8vw, 0.9rem);
       color: var(--gray);
-      max-width: 260px;
-    }
-
-    /* ─── WHAT WE BRING ─────────────────────────────────────────── */
-    #bring {
-      background: var(--black);
-    }
-
-    .bring-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 55vh;
-    }
-
-    .bring-img {
-      position: relative;
-      overflow: hidden;
-      min-height: 400px;
-    }
-
-    .bring-img .bg {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .bring-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: clamp(40px, 6vw, 100px);
-    }
-
-    .bring-text h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(1.8rem, 3.5vw, 3rem);
-      color: var(--yellow);
-      letter-spacing: 0.04em;
-      margin-bottom: 28px;
-    }
-
-    .bring-text ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .bring-text li {
-      font-family: 'Inter', sans-serif;
+      margin-top: 6px;
+      line-height: 1.4;
       font-weight: 300;
-      font-size: clamp(0.88rem, 1.3vw, 1rem);
-      color: var(--cream);
-      padding-left: 20px;
-      position: relative;
-      line-height: 1.6;
     }
 
-    .bring-text li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--yellow);
-    }
-
-    .bring-text p {
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      font-size: clamp(0.88rem, 1.3vw, 1rem);
-      color: var(--cream);
-      line-height: 1.75;
-    }
-
-    /* ─── CTA ───────────────────────────────────────────────────── */
+    /* ─── SECTION 5: CTA ─── */
     #cta {
       position: relative;
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      padding: clamp(60px, 10vw, 120px) clamp(20px, 5vw, 80px);
       text-align: center;
       overflow: hidden;
     }
@@ -499,342 +263,166 @@
     #cta .bg {
       position: absolute;
       inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1577640905050-3e40ececd2a5?w=800&q=80');
+      background-image: url('https://images.unsplash.com/photo-1536935338788-846bb9981813?w=1600&q=80');
       background-size: cover;
       background-position: center;
-      z-index: 0;
     }
 
     #cta .overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.78);
-      z-index: 1;
+      background: rgba(0, 0, 0, 0.72);
     }
 
     #cta .content {
       position: relative;
-      z-index: 5;
-      padding: 0 clamp(20px, 5vw, 80px);
-      max-width: 900px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
     }
 
-    #cta .big-headline {
+    .cta-headline {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.8rem, 8vw, 7rem);
-      color: var(--white);
-      line-height: 0.9;
-      letter-spacing: 0.02em;
-      margin-bottom: 24px;
+      font-size: clamp(2.4rem, 8vw, 5rem);
+      letter-spacing: 0.04em;
+      color: #fff;
+      line-height: 1;
     }
 
-    #cta .sub {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: clamp(1.1rem, 2vw, 1.4rem);
-      color: var(--cream);
-      margin-bottom: 48px;
+    .cta-sub {
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      color: rgba(255,255,255,0.7);
+      font-weight: 300;
     }
 
     .cta-btn {
       display: inline-block;
+      margin-top: 8px;
       background: var(--yellow);
-      color: var(--black);
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: clamp(0.85rem, 1.3vw, 1rem);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 18px 40px;
-      border-radius: 100px;
-      transition: transform 0.2s ease, background 0.2s ease;
-      min-height: 56px;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .cta-btn:hover {
-      background: var(--cream);
-      transform: scale(1.04);
-    }
-
-    .social-handles {
-      margin-top: 40px;
-      display: flex;
-      gap: 32px;
-      justify-content: center;
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      font-size: 0.85rem;
+      color: #0a0a0a;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
       letter-spacing: 0.1em;
-      color: var(--gray);
-    }
-
-    .social-handles a {
-      color: var(--gray);
       text-decoration: none;
-      transition: color 0.2s;
+      padding: 0 32px;
+      min-height: 52px;
+      line-height: 52px;
+      border-radius: 2px;
+      transition: opacity 0.2s;
     }
 
-    .social-handles a:hover {
-      color: var(--yellow);
-    }
+    .cta-btn:hover { opacity: 0.88; }
 
-    /* ─── FOOTER ────────────────────────────────────────────────── */
-    footer {
-      background: var(--black);
-      border-top: 1px solid #111;
-      padding: 32px 40px;
-      text-align: center;
-      font-family: 'Inter', sans-serif;
+    .cta-handles {
+      font-size: clamp(0.75rem, 1.8vw, 0.85rem);
+      color: var(--gray);
+      letter-spacing: 0.06em;
       font-weight: 300;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #444;
-    }
-
-    /* ─── MOBILE ────────────────────────────────────────────────── */
-    @media (max-width: 768px) {
-      #hero nav {
-        padding: 20px 24px;
-      }
-
-      #split {
-        grid-template-columns: 1fr;
-      }
-
-      .split-left {
-        min-height: 70vh;
-        padding: 48px 24px;
-      }
-
-      .split-right {
-        min-height: 70vh;
-      }
-
-      .exp-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .exp-card {
-        min-height: 80vh;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .bring-row {
-        grid-template-columns: 1fr;
-      }
-
-      .bring-row.reverse {
-        display: flex;
-        flex-direction: column-reverse;
-      }
-
-      .bring-img {
-        min-height: 300px;
-      }
-
-      .bring-text {
-        padding: 40px 24px;
-      }
-
-      .social-handles {
-        flex-direction: column;
-        gap: 16px;
-        align-items: center;
-      }
-
-      footer {
-        padding: 24px 20px;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- ═══ SECTION 1: HERO ══════════════════════════════════════════ -->
+  <!-- SECTION 1: HERO -->
   <section id="hero">
     <div class="bg"></div>
     <div class="overlay"></div>
-
-    <nav>
-      <span>Atelier Alma</span>
-      <span>× Sip Margs</span>
-    </nav>
-
-    <div class="hero-content">
-      <div class="hero-words">
-        <span>SIP.</span>
-        <span>CREATE.</span>
-        <span>KEEP.</span>
-      </div>
-      <p class="hero-sub">A Coachella ceramic activation</p>
-    </div>
-
-    <div class="scroll-arrow">↓</div>
-  </section>
-
-  <!-- ═══ SECTION 2: SPLIT INTRO ═══════════════════════════════════ -->
-  <section id="split">
-    <div class="split-left">
-      <div class="split-label">The Brand</div>
-      <p>Sip Margs is the poolside brand that turned margarita culture into a lifestyle. Bold, irreverent, and obsessed with good vibes — they don't just make drinks, they make moments. Coachella isn't just a festival for them. It's home.</p>
-      <div class="stamp">Sip More &nbsp;·&nbsp; Stir Less</div>
-    </div>
-
-    <div class="split-right">
-      <div class="bg"></div>
-      <div class="overlay"></div>
-      <div class="split-right-content">
-        <div class="split-label">The Studio</div>
-        <p>Atelier Alma is a Los Angeles ceramic studio rooted in tactile craft, feminine energy, and the kind of art that stays with you. We build hands-on experiences that blur the line between festival activation and intimate workshop — always with clay, always with intention.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ SECTION 3: THE CONCEPT ════════════════════════════════════ -->
-  <section id="concept">
-    <div class="bg"></div>
-    <div class="overlay"></div>
     <div class="content">
-      <div class="big-headline">The Coachella<br>Activation</div>
-      <div class="tagline">Sip. &nbsp; Create. &nbsp; Take Home.</div>
-      <p class="body">Guests walk into the Sip Margs footprint and walk out with something real — a ceramic piece they made with their own hands. Mini margarita charms. Painted lighter casings. Trinket dishes stamped with the Sip Margs logo. Clay they sculpted while sipping the best marg of their weekend. It's not a booth. It's a memory.</p>
+      <div class="hero-word">SIP.</div>
+      <div class="hero-word">CREATE.</div>
+      <div class="hero-word">KEEP.</div>
+      <p class="hero-sub">A Coachella ceramic activation by Atelier Alma</p>
     </div>
+    <a class="scroll-arrow" href="#pitch" aria-label="Scroll down">&#8595;</a>
   </section>
 
-  <!-- ═══ SECTION 4: EXPERIENCES ════════════════════════════════════ -->
+  <!-- SECTION 2: PITCH -->
+  <section id="pitch">
+    <div class="pitch-cols">
+      <div class="pitch-col">
+        <div class="pitch-col-label yellow">SIP MARGS</div>
+        <p>The margarita brand turning Coachella moments into something people actually remember.</p>
+      </div>
+      <div class="pitch-col">
+        <div class="pitch-col-label clay">ATELIER ALMA</div>
+        <p>A ceramic studio that brings hands-on art to live events, festivals, and brand activations.</p>
+      </div>
+    </div>
+    <p class="pitch-statement">
+      At Coachella, your guests sip while they sculpt. They leave with something handmade, branded, and theirs forever. That's the activation.
+    </p>
+  </section>
+
+  <!-- SECTION 3: EXPERIENCES -->
   <section id="experiences">
-    <div class="section-header" style="padding-bottom: 0; background: var(--black);">
-      <!-- intentionally empty — visuals carry this section -->
-    </div>
-
-    <div class="exp-grid">
-      <!-- Card 1 -->
-      <div class="exp-card">
-        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80');"></div>
-        <div class="overlay"></div>
-        <div class="text">
-          <div class="exp-num">01</div>
-          <div class="exp-title">Signature Charm Workshop</div>
-          <p class="exp-body">Hand-sculpt mini margarita charms, lime slices, and cactus pieces. Air-dry clay, glazed and branded. The ultimate festival keepsake.</p>
+    <p class="section-label">The Experiences</p>
+    <div class="cards-grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=900&q=80" alt="Charm workshop" loading="lazy" />
+        <div class="card-overlay"></div>
+        <div class="card-text">
+          <div class="card-title">CHARM WORKSHOP</div>
+          <p class="card-desc">Mini margarita charms. Guests paint, guests keep.</p>
         </div>
       </div>
-
-      <!-- Card 2 -->
-      <div class="exp-card">
-        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1604686100856-9bdf6fd84b20?w=800&q=80');"></div>
-        <div class="overlay"></div>
-        <div class="text">
-          <div class="exp-num">02</div>
-          <div class="exp-title">Ceramic Lighter Casings</div>
-          <p class="exp-body">Paint your own ceramic lighter casing on-site. Take it home that day. Every one unique. Every one Sip Margs branded on the base.</p>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1604686100856-9bdf6fd84b20?w=900&q=80" alt="Lighter casings" loading="lazy" />
+        <div class="card-overlay"></div>
+        <div class="card-text">
+          <div class="card-title">LIGHTER CASINGS</div>
+          <p class="card-desc">Ceramic lighter covers. Functional, personal, impossible to forget.</p>
         </div>
       </div>
-
-      <!-- Card 3 -->
-      <div class="exp-card">
-        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1577640905050-3e40ececd2a5?w=800&q=80');"></div>
-        <div class="overlay"></div>
-        <div class="text">
-          <div class="exp-num">03</div>
-          <div class="exp-title">Trinket Dish Studio</div>
-          <p class="exp-body">Craft a custom trinket dish stamped with Sip Margs decals and personalized with your own touch. Small enough to carry out. Big enough to remember forever.</p>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Trinket dishes" loading="lazy" />
+        <div class="card-overlay"></div>
+        <div class="card-text">
+          <div class="card-title">TRINKET DISHES</div>
+          <p class="card-desc">Branded trinket dishes stamped with your logo. Ready to take home.</p>
         </div>
       </div>
-
-      <!-- Card 4 -->
-      <div class="exp-card">
-        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1579546929662-711aa81148cf?w=800&q=80');"></div>
-        <div class="overlay"></div>
-        <div class="text">
-          <div class="exp-num">04</div>
-          <div class="exp-title">Clay Sculpting Experience</div>
-          <p class="exp-body">Our premium tier. Full sculpting session with an Atelier Alma artist, kiln-fired after the festival, and shipped directly to your door. Coachella in your home forever.</p>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?w=1200&q=80" alt="Clay sculpting" loading="lazy" />
+        <div class="card-overlay"></div>
+        <div class="card-text">
+          <div class="card-title">CLAY SCULPTING</div>
+          <p class="card-desc">Premium tier. Guests build from scratch. We fire and ship.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ SECTION 5: WHY IT WORKS ═══════════════════════════════════ -->
+  <!-- SECTION 4: STATS -->
   <section id="stats">
-    <div class="label">Why It Works</div>
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-num">3X</div>
-        <p class="stat-desc">More social content generated than a standard brand activation. Every piece is a photo waiting to happen.</p>
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-number">3X</div>
+        <div class="stat-label">social content vs standard activations</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">∞</div>
-        <p class="stat-desc">Brand recall that lasts months, not minutes. A ceramic piece on someone's shelf is an impression every single day.</p>
+      <div class="stat">
+        <div class="stat-number">MONTHS</div>
+        <div class="stat-label">brand recall, not minutes</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">78%</div>
-        <p class="stat-desc">Of guests share their handmade piece on social media within 48 hours. Organic reach. Zero spend.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ SECTION 6: WHAT WE BRING ══════════════════════════════════ -->
-  <section id="bring">
-    <!-- Row 1: Image left, text right -->
-    <div class="bring-row">
-      <div class="bring-img">
-        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800&q=80');"></div>
-      </div>
-      <div class="bring-text">
-        <h3>Studio Capabilities</h3>
-        <ul>
-          <li>Full ceramic studio setup — portable, self-contained</li>
-          <li>4–6 custom experience stations running simultaneously</li>
-          <li>All clay, tools, glazes, and finishes provided</li>
-          <li>Atelier Alma artists on-site for every shift</li>
-          <li>Custom branding on every piece (stamps, decals, packaging)</li>
-          <li>Same-day takehome pieces for most experiences</li>
-          <li>Post-festival kiln-firing + shipping for premium tier</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Row 2: Text left, image right -->
-    <div class="bring-row reverse">
-      <div class="bring-text">
-        <h3>Logistics & Ops</h3>
-        <p>We handle everything. Load-in, set-up, staffing, teardown. Our studio fits within a 10×20 footprint and can flex to your build. We've operated at markets, pop-ups, and large-scale events — Coachella is exactly the energy we were built for.<br><br>Timeline, capacity, and configuration are fully customizable to your activation goals. We work with your team from concept to execution.</p>
-      </div>
-      <div class="bring-img">
-        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1504707748692-419802cf939d?w=800&q=80');"></div>
+      <div class="stat">
+        <div class="stat-number">78%</div>
+        <div class="stat-label">of guests post their piece</div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ SECTION 7: CTA ════════════════════════════════════════════ -->
+  <!-- SECTION 5: CTA -->
   <section id="cta">
     <div class="bg"></div>
     <div class="overlay"></div>
     <div class="content">
-      <div class="big-headline">Let's Build<br>Something<br>Together</div>
-      <p class="sub">Coachella is waiting.</p>
-      <a href="mailto:natalie@atelieralma.com" class="cta-btn">
-        Reach Out → natalie@atelieralma.com
-      </a>
-      <div class="social-handles">
-        <a href="https://instagram.com/byatelieralma" target="_blank" rel="noopener">@byatelieralma</a>
-        <a href="https://instagram.com/sipmargs" target="_blank" rel="noopener">@sipmargs</a>
-      </div>
+      <div class="cta-headline">LET'S MAKE IT HAPPEN</div>
+      <p class="cta-sub">We handle everything. You show up and sip.</p>
+      <a class="cta-btn" href="mailto:natalie@atelieralma.com">GET IN TOUCH &rarr;</a>
+      <p class="cta-handles">@byatelieralma &nbsp;&nbsp; @sipmargs</p>
     </div>
   </section>
-
-  <!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
-  <footer>
-    Atelier Alma × Sip Margs &nbsp;|&nbsp; Coachella 2025
-  </footer>
 
 </body>
 </html>
