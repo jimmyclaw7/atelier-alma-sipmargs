@@ -646,61 +646,10 @@
 
 
     <div class="hero-content">
-      <!-- PICK ONE — delete the other 9 -->
-      <div class="hero-options">
-        <div class="hero-option active" data-n="1">
-          <div class="hero-tagline hero-opt-text">Sip Margs.<br>Make Art.<br>Leave Famous.</div>
-        </div>
-        <div class="hero-option" data-n="2">
-          <div class="hero-tagline hero-opt-text">Hot Girls Sip Margs<br>and Make Ceramics</div>
-        </div>
-        <div class="hero-option" data-n="3">
-          <div class="hero-tagline hero-opt-text">Drink First.<br>Create After.</div>
-        </div>
-        <div class="hero-option" data-n="4">
-          <div class="hero-tagline hero-opt-text">You Made That<br>At Coachella?</div>
-        </div>
-        <div class="hero-option" data-n="5">
-          <div class="hero-tagline hero-opt-text">Sip,<br>Sculpt,<br>Slay</div>
-        </div>
-        <div class="hero-option" data-n="6">
-          <div class="hero-tagline hero-opt-text">The Girls Who<br>Paint and Pour</div>
-        </div>
-        <div class="hero-option" data-n="7">
-          <div class="hero-tagline hero-opt-text">Drunk on Margs.<br>High on Art.</div>
-        </div>
-        <div class="hero-option" data-n="8">
-          <div class="hero-tagline hero-opt-text">Make Something<br>Prettier Than<br>Your Ex</div>
-        </div>
-        <div class="hero-option" data-n="9">
-          <div class="hero-tagline hero-opt-text">Coachella Hit Different<br>When You Made<br>the Merch</div>
-        </div>
-        <div class="hero-option" data-n="10">
-          <div class="hero-tagline hero-opt-text">Pour the Margs.<br>Build the Moment.</div>
-        </div>
-      </div>
-      <!-- picker arrows -->
-      <div class="option-nav">
-        <button class="opt-btn" id="prev-opt">←</button>
-        <span class="opt-counter" id="opt-num">1 / 10</span>
-        <button class="opt-btn" id="next-opt">→</button>
-      </div>
+      <div class="hero-tagline">You Made That<br>At Coachella?</div>
       <p class="hero-sub">A Coachella ceramic activation by Atelier Alma</p>
       <a href="#pitch" class="btn-pill">SEE THE ACTIVATION ↓</a>
     </div>
-
-    <script>
-      const opts = document.querySelectorAll('.hero-option');
-      const counter = document.getElementById('opt-num');
-      let cur = 0;
-      function show(n) {
-        opts.forEach((o,i) => o.classList.toggle('active', i === n));
-        counter.textContent = (n+1) + ' / ' + opts.length;
-        cur = n;
-      }
-      document.getElementById('next-opt').addEventListener('click', () => show((cur+1) % opts.length));
-      document.getElementById('prev-opt').addEventListener('click', () => show((cur-1+opts.length) % opts.length));
-    </script>
   </section>
 
   <!-- SECTION 2: THE PITCH -->
