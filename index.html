@@ -39,7 +39,7 @@
     ===================== */
     .hero {
       min-height: 100svh;
-      background: var(--cream);
+      background: url('photos/banner_image0.png') center center / cover no-repeat;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -50,16 +50,12 @@
       overflow: hidden;
     }
 
-    /* Gradient blobs — vibrant, in-hero only */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
       pointer-events: none;
-      background:
-        radial-gradient(ellipse 65% 55% at -8% 0%, rgba(82,180,223,0.55) 0%, transparent 52%),
-        radial-gradient(ellipse 60% 50% at 108% 5%, rgba(239,93,68,0.48) 0%, transparent 52%),
-        radial-gradient(ellipse 55% 60% at 50% 108%, rgba(255,218,34,0.50) 0%, transparent 52%);
+      background: rgba(0,0,0,0.35);
       z-index: 0;
     }
 
@@ -74,10 +70,13 @@
 
     .hero-logo {
       width: 100%;
-      max-width: 400px;
-      height: auto;
+      max-width: 320px;
+      max-height: 120px;
+      object-fit: contain;
+      object-position: center;
       display: block;
-      margin-bottom: clamp(28px, 5vw, 48px);
+      margin-bottom: clamp(20px, 4vw, 36px);
+      filter: invert(1); /* white logo on photo bg */
     }
 
     .hero-headline {
@@ -85,16 +84,17 @@
       font-size: clamp(2.4rem, 9vw, 7rem);
       line-height: 1.0;
       letter-spacing: 0.02em;
-      color: var(--black);
+      color: var(--white);
       text-transform: uppercase;
       margin-bottom: 20px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
     }
 
     .hero-sub {
       font-family: 'Inter', sans-serif;
       font-weight: 300;
       font-size: clamp(0.9rem, 2vw, 1.1rem);
-      color: rgba(0,0,0,0.55);
+      color: rgba(255,255,255,0.8);
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-bottom: clamp(32px, 5vw, 56px);
@@ -146,7 +146,7 @@
        SECTION 2: THE PITCH
     ===================== */
     .pitch {
-      background: var(--yellow);
+      background: var(--teal);
       padding: clamp(60px, 9vw, 110px) clamp(20px, 5vw, 80px);
     }
 
@@ -165,7 +165,7 @@
     .pitch-col h2 {
       font-family: 'Fjalla One', sans-serif;
       font-size: clamp(1.5rem, 3.5vw, 2.2rem);
-      color: var(--black);
+      color: var(--white);
       text-transform: uppercase;
       letter-spacing: 0.04em;
       margin-bottom: 16px;
@@ -176,21 +176,21 @@
       font-family: 'Inter', sans-serif;
       font-weight: 300;
       font-size: clamp(0.95rem, 1.6vw, 1.05rem);
-      color: rgba(0,0,0,0.75);
+      color: rgba(255,255,255,0.85);
       line-height: 1.75;
     }
 
     .pitch-divider {
       width: 100%;
       height: 2px;
-      background: rgba(0,0,0,0.12);
+      background: rgba(255,255,255,0.25);
       margin-bottom: clamp(48px, 7vw, 80px);
     }
 
     .pitch-quote {
       font-family: 'Fjalla One', sans-serif;
       font-size: clamp(1.8rem, 4.5vw, 3.2rem);
-      color: var(--black);
+      color: var(--white);
       line-height: 1.25;
       letter-spacing: 0.01em;
       max-width: 900px;
@@ -200,7 +200,7 @@
        SECTION 3: NATALIE
     ===================== */
     .natalie {
-      background: var(--cream);
+      background: var(--coral);
       padding: 0;
       overflow: hidden;
     }
@@ -235,7 +235,7 @@
       font-family: 'Inter', sans-serif;
       font-weight: 300;
       font-size: clamp(0.97rem, 1.6vw, 1.1rem);
-      color: rgba(0,0,0,0.75);
+      color: rgba(255,255,255,0.9);
       line-height: 1.8;
       margin-bottom: 48px;
     }
@@ -251,7 +251,7 @@
     .stat-num {
       font-family: 'Fjalla One', sans-serif;
       font-size: clamp(2.8rem, 6vw, 4.5rem);
-      color: var(--black);
+      color: var(--white);
       line-height: 1;
       display: block;
     }
@@ -260,7 +260,7 @@
       font-family: 'Inter', sans-serif;
       font-weight: 400;
       font-size: 0.78rem;
-      color: rgba(0,0,0,0.5);
+      color: rgba(255,255,255,0.7);
       letter-spacing: 0.12em;
       text-transform: uppercase;
       margin-top: 6px;
@@ -470,7 +470,7 @@
     }
 
     /* =====================
-       RESPONSIVE — MOBILE
+       RESPONSIVE MOBILE
     ===================== */
     @media (max-width: 700px) {
       .pitch-cols {
@@ -515,7 +515,7 @@
       <img
         class="hero-logo"
         src="photos/logo_image0.png"
-        alt="Sip Margs x Atelier Alma — Clay Bar at Coachella"
+        alt="Sip Margs x Atelier Alma Clay Bar at Coachella"
       />
       <h1 class="hero-headline">You Made That At Coachella?</h1>
       <p class="hero-sub">A ceramic activation at Coachella 2025</p>
@@ -529,11 +529,11 @@
       <div class="pitch-cols">
         <div class="pitch-col">
           <h2>Sip Margs</h2>
-          <p>The margarita brand turning moments into memories. Coachella crowds. Poolside energy. The taste of a perfect summer afternoon. Sip Margs is everywhere the party is — and the party remembers it.</p>
+          <p>The margarita brand turning moments into memories. Coachella crowds. Poolside energy. The taste of a perfect summer afternoon. Sip Margs is everywhere the party is and the party remembers it.</p>
         </div>
         <div class="pitch-col">
           <h2>Atelier Alma</h2>
-          <p>The Miami ceramic studio turning brand activations into experiences guests actually talk about. Portable. Hands-on. Personal. Every guest leaves holding something they made themselves — and that is the whole point.</p>
+          <p>The Miami ceramic studio turning brand activations into experiences guests actually talk about. Portable. Hands-on. Personal. Every guest leaves holding something they made themselves That is the point.</p>
         </div>
       </div>
       <div class="pitch-divider"></div>
@@ -547,12 +547,12 @@
       <div class="natalie-photo">
         <img
           src="photos/188fbc_image0.png"
-          alt="Atelier Alma ceramic pieces — a styled flat lay"
+          alt="Atelier Alma ceramic pieces a styled flat lay"
           loading="lazy"
         />
       </div>
       <div class="natalie-text">
-        <p>Natalie Valencia is a Miami artist. Her work has been shown at Art Basel Miami and Art Basel Switzerland. She founded Atelier Alma to bring that same fine-art energy to brand events — where real guests touch real clay and leave with something they made. 15+ events across Miami and Los Angeles. She brings everything.</p>
+        <p>Natalie Valencia is a Miami artist. Her work has been shown at Art Basel Miami and Art Basel Switzerland. She founded Atelier Alma to bring that same fine-art energy to brand events 15+ events across Miami and Los Angeles. She brings the whole operation.</p>
         <div class="natalie-stats">
           <div class="stat-item">
             <span class="stat-num">15+</span>
@@ -578,7 +578,7 @@
       <div class="cards-grid">
 
         <div class="card">
-          <img class="card-photo" src="photos/fbcfbb_image0.png" alt="Charm workshop — Sip Margs ceramic charms" loading="lazy" />
+          <img class="card-photo" src="photos/fbcfbb_image0.png" alt="Charm workshop Sip Margs ceramic charms" loading="lazy" />
           <div class="card-body">
             <h3>Charm Workshop</h3>
             <p>Guests paint custom Sip Margs ceramic charms: mini margarita glasses with a salt rim, lime wedge slices, a tiny cactus in a terracotta pot, or a SIP MORE banner. Every charm different. Every charm Instagrammable.</p>
@@ -602,7 +602,7 @@
         </div>
 
         <div class="card">
-          <img class="card-photo" src="photos/188fbc_image0.png" alt="Clay sculpting — premium ceramic experience" loading="lazy" />
+          <img class="card-photo" src="photos/188fbc_image0.png" alt="Clay sculpting premium ceramic experience" loading="lazy" />
           <div class="card-body">
             <span class="premium-badge">PREMIUM TIER</span>
             <h3>Clay Sculpting</h3>
@@ -629,7 +629,7 @@
         <div class="why-stat">
           <span class="why-stat-num">MONTHS</span>
           <div class="why-stat-line"></div>
-          <p class="why-stat-desc">how long a ceramic keepsake sits on a guest's shelf — putting your brand in front of them every single day</p>
+          <p class="why-stat-desc">how long a ceramic keepsake sits on a guest's shelf putting your brand in front of them every single day</p>
         </div>
 
         <div class="why-stat">
