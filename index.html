@@ -32,10 +32,26 @@
 
     body {
       font-family: 'Montserrat', sans-serif;
-      background: var(--bg);
+      background: #000;
       color: var(--text);
       overflow-x: hidden;
+      position: relative;
     }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 80% 50% at -10% 10%, rgba(82,180,223,0.22) 0%, transparent 60%),
+        radial-gradient(ellipse 70% 60% at 110% 20%, rgba(255,218,34,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 60% at 50% 90%, rgba(239,93,68,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 90% 60%, rgba(82,180,223,0.12) 0%, transparent 55%);
+    }
+
+    body > * { position: relative; z-index: 1; }
 
     /* ---- HERO ---- */
     .hero {
@@ -603,23 +619,14 @@
   <section class="hero">
     <div class="hero-header">ATELIER ALMA × SIP MARGS</div>
 
-    <span class="floater f1">🍋</span>
-    <span class="floater f2">🌵</span>
-    <span class="floater f3">🍹</span>
-    <span class="floater f4">🍋</span>
-    <span class="floater f5">🌵</span>
-    <span class="floater f6">🍹</span>
-    <span class="floater f7">🍋</span>
-    <span class="floater f8">🌵</span>
 
     <div class="hero-content">
-      <span class="hero-eyebrow">A Coachella Ceramic Activation</span>
       <div class="hero-tagline">
         <div class="line-1">Sip.</div>
         <div class="line-2">Create.</div>
         <div class="line-3">Keep.</div>
       </div>
-      <p class="hero-sub">Where margaritas meet handmade art</p>
+      <p class="hero-sub">A Coachella ceramic activation by Atelier Alma</p>
       <a href="#pitch" class="btn-pill">SEE THE ACTIVATION ↓</a>
     </div>
   </section>
@@ -627,7 +634,7 @@
   <!-- SECTION 2: THE PITCH -->
   <section class="pitch" id="pitch">
     <div class="pitch-inner">
-      <p class="section-label">The Collab</p>
+      
       <div class="pitch-cols">
         <div class="pitch-brand">
           <h2>Sip Margs</h2>
@@ -647,13 +654,13 @@
   <!-- SECTION 3: WHO WE ARE -->
   <section class="about" id="about">
     <div class="about-inner">
-      <p class="section-label">About Atelier Alma</p>
+      
       <div class="about-cols">
         <div class="about-text">
           <h3>Meet Natalie Valencia</h3>
           <p>Natalie Valencia is a Miami-based artist whose work has been shown at Art Basel Miami and Art Basel Switzerland. That same fine-art sensibility is the foundation of Atelier Alma, her ceramic events company. She runs intimate, hands-on workshops in Miami and Los Angeles where guests create real ceramic pieces to take home.</p>
           <p>She has collaborated with studios and brands in LA. Her setup is fully portable. No warehouse. No logistics headaches. Just art, energy, and guests who leave with something real.</p>
-          <span class="next-stop">NEXT STOP: COACHELLA 🌵</span>
+          <span class="next-stop">NEXT STOP: COACHELLA</span>
         </div>
         <div class="badges">
           <div class="badges-row">
@@ -680,30 +687,26 @@
   <!-- SECTION 4: THE EXPERIENCES -->
   <section class="experiences" id="experiences">
     <div class="experiences-inner">
-      <p class="section-label">The Activation</p>
-      <h2>Four Ways <span>to Play</span></h2>
+      
+      <h2>The Activation</h2>
       <div class="cards-grid">
 
         <div class="card">
-          <span class="card-emoji">🍋</span>
           <h3>Charm Workshop</h3>
           <p>Guests paint Sip Margs ceramic charms: mini margarita glasses with a salt rim, lime wedge slices, a tiny cactus in a terracotta pot, or a yellow SIP MORE banner. Every charm different. Every charm Instagrammable.</p>
         </div>
 
         <div class="card">
-          <span class="card-emoji">🔥</span>
           <h3>Lighter Casings</h3>
           <p>Custom ceramic lighter covers painted on the spot. Functional, personal, and impossible to leave behind.</p>
         </div>
 
         <div class="card">
-          <span class="card-emoji">🫙</span>
           <h3>Trinket Dishes</h3>
           <p>Pre-made dishes stamped with Sip Margs branding. Guests add color and personality. Done in minutes, remembered forever.</p>
         </div>
 
         <div class="card card-teal">
-          <span class="card-emoji">🤲</span>
           <span class="premium-badge">PREMIUM TIER</span>
           <h3>Clay Sculpting</h3>
           <p>Guests hand-build from scratch. Atelier Alma fires and ships the finished piece after Coachella. The ultimate keepsake.</p>
