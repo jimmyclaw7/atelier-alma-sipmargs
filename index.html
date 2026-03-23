@@ -122,6 +122,31 @@
     .hero-tagline .line-2 { color: var(--yellow); }
     .hero-tagline .line-3 { color: var(--teal); }
 
+    .hero-option { display: none; }
+    .hero-option.active { display: block; }
+    .hero-opt-text { margin-bottom: 0; }
+    .option-nav {
+      display: flex; align-items: center; gap: 16px;
+      margin: 16px 0 8px;
+    }
+    .opt-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      border-radius: 50%;
+      width: 40px; height: 40px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .opt-btn:hover { background: rgba(255,255,255,0.2); }
+    .opt-counter {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.1em;
+    }
+
     .hero-sub {
       font-family: 'Montserrat', sans-serif;
       font-weight: 300;
@@ -621,14 +646,61 @@
 
 
     <div class="hero-content">
-      <div class="hero-tagline">
-        <div class="line-1">Sip.</div>
-        <div class="line-2">Create.</div>
-        <div class="line-3">Keep.</div>
+      <!-- PICK ONE — delete the other 9 -->
+      <div class="hero-options">
+        <div class="hero-option active" data-n="1">
+          <div class="hero-tagline hero-opt-text">Sip Margs.<br>Make Art.<br>Leave Famous.</div>
+        </div>
+        <div class="hero-option" data-n="2">
+          <div class="hero-tagline hero-opt-text">Hot Girls Sip Margs<br>and Make Ceramics</div>
+        </div>
+        <div class="hero-option" data-n="3">
+          <div class="hero-tagline hero-opt-text">Drink First.<br>Create After.</div>
+        </div>
+        <div class="hero-option" data-n="4">
+          <div class="hero-tagline hero-opt-text">You Made That<br>At Coachella?</div>
+        </div>
+        <div class="hero-option" data-n="5">
+          <div class="hero-tagline hero-opt-text">Sip,<br>Sculpt,<br>Slay</div>
+        </div>
+        <div class="hero-option" data-n="6">
+          <div class="hero-tagline hero-opt-text">The Girls Who<br>Paint and Pour</div>
+        </div>
+        <div class="hero-option" data-n="7">
+          <div class="hero-tagline hero-opt-text">Drunk on Margs.<br>High on Art.</div>
+        </div>
+        <div class="hero-option" data-n="8">
+          <div class="hero-tagline hero-opt-text">Make Something<br>Prettier Than<br>Your Ex</div>
+        </div>
+        <div class="hero-option" data-n="9">
+          <div class="hero-tagline hero-opt-text">Coachella Hit Different<br>When You Made<br>the Merch</div>
+        </div>
+        <div class="hero-option" data-n="10">
+          <div class="hero-tagline hero-opt-text">Pour the Margs.<br>Build the Moment.</div>
+        </div>
+      </div>
+      <!-- picker arrows -->
+      <div class="option-nav">
+        <button class="opt-btn" id="prev-opt">←</button>
+        <span class="opt-counter" id="opt-num">1 / 10</span>
+        <button class="opt-btn" id="next-opt">→</button>
       </div>
       <p class="hero-sub">A Coachella ceramic activation by Atelier Alma</p>
       <a href="#pitch" class="btn-pill">SEE THE ACTIVATION ↓</a>
     </div>
+
+    <script>
+      const opts = document.querySelectorAll('.hero-option');
+      const counter = document.getElementById('opt-num');
+      let cur = 0;
+      function show(n) {
+        opts.forEach((o,i) => o.classList.toggle('active', i === n));
+        counter.textContent = (n+1) + ' / ' + opts.length;
+        cur = n;
+      }
+      document.getElementById('next-opt').addEventListener('click', () => show((cur+1) % opts.length));
+      document.getElementById('prev-opt').addEventListener('click', () => show((cur-1+opts.length) % opts.length));
+    </script>
   </section>
 
   <!-- SECTION 2: THE PITCH -->
