@@ -6,7 +6,7 @@
   <title>Atelier Alma × Sip Margs | Coachella 2025</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -15,131 +15,89 @@
     }
 
     :root {
-      --bg: #FFF8E8;
+      --cream: #FFF8E8;
+      --cream2: #FFF3DA;
       --yellow: #FFDA22;
-      --yellow-card: #F4E07A;
       --teal: #52B4DF;
       --coral: #EF5D44;
-      --cream: #FFF3DA;
-      --navy: #1A1A2E;
       --black: #000000;
+      --navy: #1A1A2E;
       --white: #FFFFFF;
     }
 
-    html {
-      overflow-x: hidden;
-    }
+    html { overflow-x: hidden; scroll-behavior: smooth; }
 
     body {
-      font-family: 'Montserrat', sans-serif;
-      background: #FFF8E8;
-      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--black);
       overflow-x: hidden;
-      position: relative;
     }
 
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(ellipse 60% 50% at -5% 5%, rgba(82,180,223,0.35) 0%, transparent 55%),
-        radial-gradient(ellipse 55% 45% at 105% 15%, rgba(239,93,68,0.28) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 55% at 50% 100%, rgba(255,218,34,0.30) 0%, transparent 55%);
-    }
-
-    body > * { position: relative; z-index: 1; }
-
-    /* ---- HERO ---- */
+    /* =====================
+       SECTION 1: HERO
+    ===================== */
     .hero {
       min-height: 100svh;
-      background: transparent;
+      background: var(--cream);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 100px 24px 64px;
+      padding: clamp(40px, 7vw, 100px) clamp(20px, 5vw, 80px);
       position: relative;
       overflow: hidden;
     }
 
-    .hero-header {
+    /* Gradient blobs — vibrant, in-hero only */
+    .hero::before {
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 18px 24px;
-      font-family: 'Fjalla One', sans-serif;
-      font-size: 0.9rem;
-      letter-spacing: 0.2em;
-      color: rgba(0,0,0,0.4);
-      text-align: center;
-      border-bottom: 1px solid rgba(0,0,0,0.08);
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 65% 55% at -8% 0%, rgba(82,180,223,0.55) 0%, transparent 52%),
+        radial-gradient(ellipse 60% 50% at 108% 5%, rgba(239,93,68,0.48) 0%, transparent 52%),
+        radial-gradient(ellipse 55% 60% at 50% 108%, rgba(255,218,34,0.50) 0%, transparent 52%);
+      z-index: 0;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
     }
 
-    .hero-eyebrow {
-      display: inline-block;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 500;
-      font-size: 0.75rem;
-      letter-spacing: 0.3em;
-      color: var(--teal);
-      text-transform: uppercase;
-      margin-bottom: 24px;
+    .hero-logo {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      display: block;
+      margin-bottom: clamp(28px, 5vw, 48px);
     }
 
-    .hero-tagline {
+    .hero-headline {
       font-family: 'Fjalla One', sans-serif;
-      font-size: clamp(2.6rem, 10vw, 8rem);
+      font-size: clamp(2.4rem, 9vw, 7rem);
       line-height: 1.0;
-      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+      color: var(--black);
       text-transform: uppercase;
-      max-width: 14ch;
-      color: var(--black);
-    }
-
-    .hero-option { display: none; }
-    .hero-option.active { display: block; }
-    .hero-opt-text { margin-bottom: 0; }
-    .option-nav {
-      display: flex; align-items: center; gap: 16px;
-      margin: 16px 0 8px;
-    }
-    .opt-btn {
-      background: rgba(0,0,0,0.08);
-      border: 1px solid rgba(0,0,0,0.15);
-      color: var(--black);
-      border-radius: 50%;
-      width: 40px; height: 40px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .opt-btn:hover { background: rgba(0,0,0,0.15); }
-    .opt-counter {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.75rem;
-      color: rgba(0,0,0,0.45);
-      letter-spacing: 0.1em;
+      margin-bottom: 20px;
     }
 
     .hero-sub {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-weight: 300;
-      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
-      color: rgba(26,26,46,0.65);
-      margin-bottom: 40px;
-      letter-spacing: 0.06em;
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      color: rgba(0,0,0,0.55);
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      margin-bottom: clamp(32px, 5vw, 56px);
     }
 
     .btn-pill {
@@ -147,256 +105,190 @@
       background: var(--black);
       color: var(--white);
       font-family: 'Fjalla One', sans-serif;
-      font-size: 1rem;
-      letter-spacing: 0.1em;
-      padding: 16px 40px;
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      letter-spacing: 0.12em;
+      padding: 16px 44px;
       border-radius: 9999px;
       text-decoration: none;
       border: none;
       cursor: pointer;
-      min-height: 54px;
-      line-height: 1.2;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.20);
     }
 
     .btn-pill:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.25);
-      background: #222;
+      box-shadow: 0 10px 32px rgba(0,0,0,0.28);
     }
 
-    /* Floating emoji decorations */
-    .floater {
-      position: absolute;
-      pointer-events: none;
-      user-select: none;
-      opacity: 0.45;
-      z-index: 1;
-      font-size: 1.8rem;
+    .btn-pill-yellow {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      font-family: 'Fjalla One', sans-serif;
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      letter-spacing: 0.12em;
+      padding: 16px 44px;
+      border-radius: 9999px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
     }
 
-    .f1 { top: 16%; left: 7%; }
-    .f2 { top: 24%; right: 8%; font-size: 1.4rem; }
-    .f3 { bottom: 26%; left: 9%; font-size: 2rem; }
-    .f4 { bottom: 20%; right: 7%; font-size: 1.6rem; }
-    .f5 { top: 50%; left: 3%; font-size: 1.2rem; }
-    .f6 { top: 40%; right: 4%; font-size: 1.5rem; }
-    .f7 { top: 9%; left: 40%; font-size: 1.1rem; }
-    .f8 { bottom: 9%; left: 44%; font-size: 1.3rem; }
-
-    /* ---- SECTION SHARED ---- */
-    .section-label {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 500;
-      font-size: 0.72rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 20px;
+    .btn-pill-yellow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.22);
     }
 
-    /* ---- PITCH ---- */
+    /* =====================
+       SECTION 2: THE PITCH
+    ===================== */
     .pitch {
       background: var(--yellow);
-      padding: 72px 24px;
+      padding: clamp(60px, 9vw, 110px) clamp(20px, 5vw, 80px);
     }
 
     .pitch-inner {
-      max-width: 900px;
+      max-width: 1080px;
       margin: 0 auto;
     }
 
     .pitch-cols {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2px;
-      margin-bottom: 56px;
-      border: 2px solid rgba(0,0,0,0.12);
-      border-radius: 2rem;
-      overflow: hidden;
+      gap: 48px;
+      margin-bottom: clamp(48px, 7vw, 80px);
     }
 
-    .pitch-brand {
-      padding: 40px 36px;
-      background: rgba(255,255,255,0.25);
-    }
-
-    .pitch-brand:first-child {
-      border-right: 2px solid rgba(0,0,0,0.12);
-    }
-
-    .pitch-brand h2 {
+    .pitch-col h2 {
       font-family: 'Fjalla One', sans-serif;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
       color: var(--black);
-      margin-bottom: 14px;
       text-transform: uppercase;
       letter-spacing: 0.04em;
+      margin-bottom: 16px;
+      line-height: 1.1;
     }
 
-    .pitch-brand p {
-      font-family: 'Montserrat', sans-serif;
+    .pitch-col p {
+      font-family: 'Inter', sans-serif;
       font-weight: 300;
-      font-size: 1rem;
-      color: rgba(0,0,0,0.72);
-      line-height: 1.7;
+      font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+      color: rgba(0,0,0,0.75);
+      line-height: 1.75;
     }
 
-    .pitch-quote-wrap {
-      border-left: 4px solid var(--coral);
-      padding-left: 28px;
-      max-width: 700px;
-      margin: 0 auto;
+    .pitch-divider {
+      width: 100%;
+      height: 2px;
+      background: rgba(0,0,0,0.12);
+      margin-bottom: clamp(48px, 7vw, 80px);
     }
 
     .pitch-quote {
       font-family: 'Fjalla One', sans-serif;
-      font-size: clamp(1.3rem, 3.5vw, 2rem);
+      font-size: clamp(1.8rem, 4.5vw, 3.2rem);
       color: var(--black);
-      line-height: 1.45;
-      letter-spacing: 0.02em;
-    }
-
-    /* ---- WHO WE ARE ---- */
-    .about {
-      background: var(--cream);
-      padding: 80px 24px;
-    }
-
-    .about-inner {
+      line-height: 1.25;
+      letter-spacing: 0.01em;
       max-width: 900px;
-      margin: 0 auto;
     }
 
-    .about-cols {
+    /* =====================
+       SECTION 3: NATALIE
+    ===================== */
+    .natalie {
+      background: var(--cream);
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .natalie-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: start;
+      min-height: 680px;
     }
 
-    .about-text h3 {
-      font-family: 'Fjalla One', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      color: var(--black);
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      line-height: 1.1;
+    .natalie-photo {
+      position: relative;
+      overflow: hidden;
     }
 
-    .about-text p {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
-      font-size: 0.97rem;
-      color: #333333;
-      line-height: 1.75;
-      margin-bottom: 14px;
+    .natalie-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 0 24px 24px 0;
     }
 
-    .next-stop {
-      display: inline-block;
-      background: var(--black);
-      color: var(--white);
-      font-family: 'Fjalla One', sans-serif;
-      font-size: 0.9rem;
-      letter-spacing: 0.14em;
-      padding: 10px 24px;
-      border-radius: 9999px;
-      margin-top: 24px;
-    }
-
-    .badges {
+    .natalie-text {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      justify-content: center;
+      padding: clamp(48px, 7vw, 100px) clamp(32px, 5vw, 80px);
     }
 
-    .badges-row {
+    .natalie-text p {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.97rem, 1.6vw, 1.1rem);
+      color: rgba(0,0,0,0.75);
+      line-height: 1.8;
+      margin-bottom: 48px;
+    }
+
+    .natalie-stats {
       display: flex;
-      gap: 16px;
+      gap: 40px;
       flex-wrap: wrap;
     }
 
-    .badge-circle {
-      flex: 1;
-      min-width: 110px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      border: 2px solid rgba(0,0,0,0.18);
-      background: rgba(255,218,34,0.25);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 14px;
-    }
+    .stat-item {}
 
-    .badge-circle .badge-num {
+    .stat-num {
       font-family: 'Fjalla One', sans-serif;
-      font-size: 2.2rem;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
       color: var(--black);
       line-height: 1;
+      display: block;
     }
 
-    .badge-circle .badge-label {
-      font-family: 'Montserrat', sans-serif;
+    .stat-label {
+      font-family: 'Inter', sans-serif;
       font-weight: 400;
-      font-size: 0.68rem;
-      color: rgba(0,0,0,0.6);
-      letter-spacing: 0.06em;
+      font-size: 0.78rem;
+      color: rgba(0,0,0,0.5);
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       margin-top: 6px;
-      line-height: 1.3;
+      display: block;
     }
 
-    .badge-wide {
-      border-radius: 2rem;
-      aspect-ratio: unset;
-      padding: 20px 24px;
-      flex-direction: row;
-      gap: 16px;
-    }
-
-    .badge-wide .badge-num {
-      font-size: 1.6rem;
-    }
-
-    .badge-wide .badge-label {
-      text-align: left;
-      margin-top: 0;
-    }
-
-    /* ---- EXPERIENCES ---- */
-    .experiences {
+    /* =====================
+       SECTION 4: THE ACTIVATION
+    ===================== */
+    .activation {
       background: var(--white);
-      padding: 80px 24px;
+      padding: clamp(60px, 9vw, 110px) clamp(20px, 5vw, 80px);
     }
 
-    .experiences-inner {
-      max-width: 900px;
+    .activation-inner {
+      max-width: 1080px;
       margin: 0 auto;
     }
 
-    .experiences-inner .section-label {
-      text-align: center;
-    }
-
-    .experiences-inner > h2 {
+    .activation-heading {
       font-family: 'Fjalla One', sans-serif;
-      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      font-size: clamp(2.8rem, 8vw, 6rem);
       color: var(--black);
-      text-align: center;
-      margin-bottom: 56px;
-      letter-spacing: 0.04em;
       text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-align: center;
+      margin-bottom: clamp(40px, 6vw, 72px);
       line-height: 1;
-    }
-
-    .experiences-inner > h2 span {
-      color: var(--teal);
     }
 
     .cards-grid {
@@ -407,16 +299,18 @@
 
     .card {
       background: var(--yellow);
-      border-radius: 2rem;
+      border-radius: 20px;
       overflow: hidden;
-      color: #000;
-      position: relative;
-      transition: transform 0.15s ease;
       display: flex;
       flex-direction: column;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
-    .card:hover { transform: translateY(-3px); }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.14);
+    }
 
     .card-photo {
       width: 100%;
@@ -426,211 +320,189 @@
     }
 
     .card-body {
-      padding: 24px 22px 28px;
-    }
-
-    .card-emoji {
-      font-size: 2.4rem;
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    .card h3 {
-      font-family: 'Fjalla One', sans-serif;
-      font-size: 1.4rem;
-      letter-spacing: 0.06em;
-      color: #000;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-    }
-
-    .card p {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 400;
-      font-size: 0.88rem;
-      color: rgba(0,0,0,0.72);
-      line-height: 1.65;
+      padding: clamp(20px, 3vw, 32px);
+      background: var(--yellow);
+      flex: 1;
     }
 
     .premium-badge {
       display: inline-block;
-      background: #000;
+      background: var(--black);
       color: var(--white);
       font-family: 'Fjalla One', sans-serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
       padding: 5px 14px;
       border-radius: 9999px;
       margin-bottom: 12px;
       text-transform: uppercase;
     }
 
-    .card.card-teal {
-      background: var(--teal);
+    .card h3 {
+      font-family: 'Fjalla One', sans-serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      letter-spacing: 0.06em;
+      color: var(--black);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      line-height: 1.1;
     }
 
-    .card.card-teal h3,
-    .card.card-teal p {
+    .card p {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.83rem, 1.4vw, 0.93rem);
+      color: rgba(0,0,0,0.72);
+      line-height: 1.7;
+    }
+
+    /* =====================
+       SECTION 5: WHY IT WORKS
+    ===================== */
+    .why {
+      background: var(--coral);
+      padding: clamp(60px, 9vw, 110px) clamp(20px, 5vw, 80px);
+    }
+
+    .why-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .why-heading {
+      font-family: 'Fjalla One', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
       color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: clamp(40px, 6vw, 72px);
+      opacity: 0.92;
     }
 
-    .card.card-teal p {
-      color: rgba(255,255,255,0.85);
+    .why-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
     }
 
-    .card.card-teal .premium-badge {
-      background: #000;
+    .why-stat {}
+
+    .why-stat-num {
+      font-family: 'Fjalla One', sans-serif;
+      font-size: clamp(3.5rem, 9vw, 7rem);
       color: var(--white);
+      line-height: 1;
+      display: block;
+      letter-spacing: -0.01em;
     }
 
-    /* ---- CTA ---- */
+    .why-stat-line {
+      width: 40px;
+      height: 3px;
+      background: rgba(255,255,255,0.5);
+      margin: 16px 0;
+    }
+
+    .why-stat-desc {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.85rem, 1.4vw, 1rem);
+      color: rgba(255,255,255,0.88);
+      line-height: 1.6;
+    }
+
+    /* =====================
+       SECTION 6: CTA
+    ===================== */
     .cta {
       background: var(--teal);
-      padding: 88px 24px;
+      padding: clamp(72px, 10vw, 130px) clamp(20px, 5vw, 80px);
       text-align: center;
     }
 
     .cta-inner {
-      max-width: 640px;
+      max-width: 700px;
       margin: 0 auto;
     }
 
     .cta h2 {
       font-family: 'Fjalla One', sans-serif;
-      font-size: clamp(2.8rem, 9vw, 5.5rem);
+      font-size: clamp(2.8rem, 9vw, 6rem);
       color: var(--white);
-      margin-bottom: 20px;
-      line-height: 0.95;
       text-transform: uppercase;
       letter-spacing: 0.03em;
+      line-height: 1.0;
+      margin-bottom: 24px;
     }
 
     .cta p {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 400;
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 40px;
-      line-height: 1.6;
-    }
-
-    .btn-pill-dark {
-      display: inline-block;
-      background: var(--white);
-      color: var(--black);
-      font-family: 'Fjalla One', sans-serif;
-      font-size: 1rem;
-      letter-spacing: 0.1em;
-      padding: 16px 40px;
-      border-radius: 9999px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      min-height: 54px;
-      line-height: 1.2;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .btn-pill-dark:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255,255,255,0.88);
+      line-height: 1.65;
+      margin-bottom: 44px;
     }
 
     .cta-handles {
-      margin-top: 24px;
-      font-family: 'Montserrat', sans-serif;
+      margin-top: 28px;
+      font-family: 'Inter', sans-serif;
       font-weight: 300;
       font-size: 0.85rem;
       color: rgba(255,255,255,0.7);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
     }
 
-    /* ---- FOOTER ---- */
+    /* =====================
+       FOOTER
+    ===================== */
     footer {
-      background: var(--bg);
-      color: rgba(0,0,0,0.35);
+      background: var(--cream);
+      color: rgba(0,0,0,0.38);
       text-align: center;
-      padding: 22px 24px;
-      font-family: 'Fjalla One', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
+      padding: 24px clamp(20px, 5vw, 80px);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       border-top: 1px solid rgba(0,0,0,0.08);
     }
 
-    /* ---- DIVIDERS ---- */
-    .divider {
-      display: block;
-      width: 100%;
-      overflow: hidden;
-      line-height: 0;
-    }
-
-    .divider svg {
-      display: block;
-      width: 100%;
-    }
-
-    /* ---- RESPONSIVE ---- */
-    @media (max-width: 640px) {
+    /* =====================
+       RESPONSIVE — MOBILE
+    ===================== */
+    @media (max-width: 700px) {
       .pitch-cols {
-        grid-template-columns: 1fr;
-        border-radius: 1.2rem;
-      }
-
-      .pitch-brand:first-child {
-        border-right: none;
-        border-bottom: 2px solid rgba(0,0,0,0.12);
-      }
-
-      .pitch-brand {
-        padding: 28px 24px;
-      }
-
-      .about-cols {
         grid-template-columns: 1fr;
         gap: 36px;
       }
 
-      .badges-row {
-        gap: 12px;
+      .natalie-inner {
+        grid-template-columns: 1fr;
+        min-height: unset;
       }
 
-      .badge-circle {
-        min-width: 90px;
+      .natalie-photo img {
+        border-radius: 0 0 24px 24px;
+        height: 320px;
       }
 
-      .badge-circle .badge-num {
-        font-size: 1.7rem;
+      .natalie-text {
+        padding: clamp(36px, 7vw, 60px) clamp(20px, 5vw, 40px);
+      }
+
+      .natalie-stats {
+        gap: 28px;
       }
 
       .cards-grid {
         grid-template-columns: 1fr;
       }
 
-      .pitch {
-        padding: 48px 24px;
-      }
-
-      .about {
-        padding: 48px 24px;
-      }
-
-      .experiences {
-        padding: 48px 24px;
-      }
-
-      .cta {
-        padding: 56px 24px;
-      }
-
-      .pitch-quote-wrap {
-        padding-left: 20px;
-      }
-
-      .f1, .f2, .f3, .f4, .f5, .f6, .f7, .f8 {
-        font-size: 1rem;
-        opacity: 0.3;
+      .why-stats {
+        grid-template-columns: 1fr;
+        gap: 40px;
       }
     }
   </style>
@@ -638,13 +510,15 @@
 <body>
 
   <!-- SECTION 1: HERO -->
-  <section class="hero">
-    <div class="hero-header">ATELIER ALMA × SIP MARGS</div>
-
-
+  <section class="hero" id="top">
     <div class="hero-content">
-      <div class="hero-tagline">You Made That At Coachella?</div>
-      <p class="hero-sub">A Coachella ceramic activation by Atelier Alma</p>
+      <img
+        class="hero-logo"
+        src="photos/logo_image0.png"
+        alt="Sip Margs x Atelier Alma — Clay Bar at Coachella"
+      />
+      <h1 class="hero-headline">You Made That At Coachella?</h1>
+      <p class="hero-sub">A ceramic activation at Coachella 2025</p>
       <a href="#pitch" class="btn-pill">SEE THE ACTIVATION ↓</a>
     </div>
   </section>
@@ -652,92 +526,87 @@
   <!-- SECTION 2: THE PITCH -->
   <section class="pitch" id="pitch">
     <div class="pitch-inner">
-      
       <div class="pitch-cols">
-        <div class="pitch-brand">
+        <div class="pitch-col">
           <h2>Sip Margs</h2>
-          <p>The margarita brand turning moments into memories. Coachella crowds. Poolside energy. Pure summer.</p>
+          <p>The margarita brand turning moments into memories. Coachella crowds. Poolside energy. The taste of a perfect summer afternoon. Sip Margs is everywhere the party is — and the party remembers it.</p>
         </div>
-        <div class="pitch-brand">
+        <div class="pitch-col">
           <h2>Atelier Alma</h2>
-          <p>The Miami ceramic studio turning brand events into experiences guests actually remember. Portable. Hands-on. Unforgettable.</p>
+          <p>The Miami ceramic studio turning brand activations into experiences guests actually talk about. Portable. Hands-on. Personal. Every guest leaves holding something they made themselves — and that is the whole point.</p>
         </div>
       </div>
-      <div class="pitch-quote-wrap">
-        <p class="pitch-quote">Your guests sip Sip Margs. They make something. They take it home. They talk about it for months.</p>
-      </div>
+      <div class="pitch-divider"></div>
+      <p class="pitch-quote">Your guests sip Sip Margs. They make something real. They take it home. They talk about it for months.</p>
     </div>
   </section>
 
-  <!-- SECTION 3: WHO WE ARE -->
-  <section class="about" id="about">
-    <div class="about-inner">
-      
-      <div class="about-cols">
-        <div class="about-text">
-          <h3>Meet Natalie Valencia</h3>
-          <p>Natalie Valencia is a Miami-based artist whose work has been shown at Art Basel Miami and Art Basel Switzerland. That same fine-art sensibility is the foundation of Atelier Alma, her ceramic events company. She runs intimate, hands-on workshops in Miami and Los Angeles where guests create real ceramic pieces to take home.</p>
-          <p>She has collaborated with studios and brands in LA. Her setup is fully portable. No warehouse. No logistics headaches. Just art, energy, and guests who leave with something real.</p>
-        </div>
-        <div class="badges">
-          <div class="badges-row">
-            <div class="badge-circle">
-              <span class="badge-num">15+</span>
-              <span class="badge-label">live events</span>
-            </div>
-            <div class="badge-circle">
-              <span class="badge-num">2</span>
-              <span class="badge-label">Miami + LA</span>
-            </div>
+  <!-- SECTION 3: NATALIE -->
+  <section class="natalie" id="natalie">
+    <div class="natalie-inner">
+      <div class="natalie-photo">
+        <img
+          src="photos/188fbc_image0.png"
+          alt="Atelier Alma ceramic pieces — a styled flat lay"
+          loading="lazy"
+        />
+      </div>
+      <div class="natalie-text">
+        <p>Natalie Valencia is a Miami artist. Her work has been shown at Art Basel Miami and Art Basel Switzerland. She founded Atelier Alma to bring that same fine-art energy to brand events — where real guests touch real clay and leave with something they made. 15+ events across Miami and Los Angeles. She brings everything.</p>
+        <div class="natalie-stats">
+          <div class="stat-item">
+            <span class="stat-num">15+</span>
+            <span class="stat-label">Live Events</span>
           </div>
-          <div class="badge-circle badge-wide">
-            <span class="badge-num">✦</span>
-            <div>
-              <span class="badge-label">Artist featured at<br>Art Basel</span>
-            </div>
+          <div class="stat-item">
+            <span class="stat-num">2</span>
+            <span class="stat-label">Cities</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">2×</span>
+            <span class="stat-label">Art Basel</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 4: THE EXPERIENCES -->
-  <section class="experiences" id="experiences">
-    <div class="experiences-inner">
-      
-      <h2>The Activation</h2>
+  <!-- SECTION 4: THE ACTIVATION -->
+  <section class="activation" id="activation">
+    <div class="activation-inner">
+      <h2 class="activation-heading">The Activation</h2>
       <div class="cards-grid">
 
         <div class="card">
-          <img class="card-photo" src="photos/fbcfbb_image0.png" alt="Sip Margs ceramic charm keychain" loading="lazy" />
+          <img class="card-photo" src="photos/fbcfbb_image0.png" alt="Charm workshop — Sip Margs ceramic charms" loading="lazy" />
           <div class="card-body">
             <h3>Charm Workshop</h3>
-            <p>Guests paint Sip Margs ceramic charms: mini margarita glasses with a salt rim, lime wedge slices, a tiny cactus in a terracotta pot, or a SIP MORE banner. Every charm different. Every charm Instagrammable.</p>
+            <p>Guests paint custom Sip Margs ceramic charms: mini margarita glasses with a salt rim, lime wedge slices, a tiny cactus in a terracotta pot, or a SIP MORE banner. Every charm different. Every charm Instagrammable.</p>
           </div>
         </div>
 
         <div class="card">
-          <img class="card-photo" src="photos/1dbeab_image0.png" alt="Sip Margs ceramic lighter casing" loading="lazy" />
+          <img class="card-photo" src="photos/1dbeab_image0.png" alt="Ceramic lighter casings" loading="lazy" />
           <div class="card-body">
             <h3>Lighter Casings</h3>
-            <p>Custom ceramic lighter covers painted on the spot. Functional, personal, and impossible to leave behind.</p>
+            <p>Custom ceramic lighter covers painted on the spot. Functional, personal, and impossible to leave behind. They go home. They end up on every flat surface. They start conversations.</p>
           </div>
         </div>
 
         <div class="card">
-          <img class="card-photo" src="photos/7926c4_image0.png" alt="Sip Margs ceramic trinket dish" loading="lazy" />
+          <img class="card-photo" src="photos/7926c4_image0.png" alt="Ceramic trinket dish" loading="lazy" />
           <div class="card-body">
             <h3>Trinket Dishes</h3>
-            <p>Pre-made dishes stamped with Sip Margs branding. Guests add color and personality. Done in minutes, remembered forever.</p>
+            <p>Pre-made dishes stamped with Sip Margs branding. Guests add color and personality. Done in minutes, remembered forever. Every desk and dresser needs one.</p>
           </div>
         </div>
 
-        <div class="card card-teal">
-          <img class="card-photo" src="photos/188fbc_image0.png" alt="Atelier Alma ceramic pieces collection" loading="lazy" />
+        <div class="card">
+          <img class="card-photo" src="photos/188fbc_image0.png" alt="Clay sculpting — premium ceramic experience" loading="lazy" />
           <div class="card-body">
             <span class="premium-badge">PREMIUM TIER</span>
             <h3>Clay Sculpting</h3>
-            <p>Guests hand-build from scratch. Atelier Alma fires and ships the finished piece after Coachella. The ultimate keepsake.</p>
+            <p>Guests hand-build from scratch. Atelier Alma fires and ships the finished piece after Coachella. The ultimate keepsake. The only activation guests are still talking about six months later.</p>
           </div>
         </div>
 
@@ -745,19 +614,47 @@
     </div>
   </section>
 
-  <!-- SECTION 5: CTA -->
+  <!-- SECTION 5: WHY IT WORKS -->
+  <section class="why" id="why">
+    <div class="why-inner">
+      <p class="why-heading">Why It Works</p>
+      <div class="why-stats">
+
+        <div class="why-stat">
+          <span class="why-stat-num">3X</span>
+          <div class="why-stat-line"></div>
+          <p class="why-stat-desc">longer dwell time at activations with hands-on experiences vs. standard brand booths</p>
+        </div>
+
+        <div class="why-stat">
+          <span class="why-stat-num">MONTHS</span>
+          <div class="why-stat-line"></div>
+          <p class="why-stat-desc">how long a ceramic keepsake sits on a guest's shelf — putting your brand in front of them every single day</p>
+        </div>
+
+        <div class="why-stat">
+          <span class="why-stat-num">78%</span>
+          <div class="why-stat-line"></div>
+          <p class="why-stat-desc">of consumers say experiential marketing increases purchase intent more than any other format</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: CTA -->
   <section class="cta" id="contact">
     <div class="cta-inner">
       <h2>Let's Make It Happen</h2>
       <p>Atelier Alma handles every detail. You just show up and pour the margs.</p>
-      <a href="mailto:natalie@atelieralma.com" class="btn-pill-dark">GET IN TOUCH → natalie@atelieralma.com</a>
-      <p class="cta-handles">@byatelieralma &nbsp;&nbsp; @sipmargs</p>
+      <a href="mailto:natalie@atelieralma.com" class="btn-pill-yellow">GET IN TOUCH → natalie@atelieralma.com</a>
+      <p class="cta-handles">@byatelieralma &nbsp;&nbsp;&nbsp; @sipmargs</p>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    ATELIER ALMA × SIP MARGS &nbsp;|&nbsp; COACHELLA 2025
+    Atelier Alma × Sip Margs &nbsp;|&nbsp; Coachella 2025
   </footer>
 
 </body>
