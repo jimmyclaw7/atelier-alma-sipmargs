@@ -427,14 +427,25 @@
     .card {
       background: var(--yellow-card);
       border-radius: 2rem;
-      padding: 32px 28px;
+      overflow: hidden;
       color: #000;
       position: relative;
       transition: transform 0.15s ease;
+      display: flex;
+      flex-direction: column;
     }
 
-    .card:hover {
-      transform: translateY(-3px);
+    .card:hover { transform: translateY(-3px); }
+
+    .card-photo {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 24px 22px 28px;
     }
 
     .card-emoji {
@@ -445,17 +456,17 @@
 
     .card h3 {
       font-family: 'Fjalla One', sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       letter-spacing: 0.06em;
       color: #000;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       text-transform: uppercase;
     }
 
     .card p {
       font-family: 'Montserrat', sans-serif;
       font-weight: 400;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: rgba(0,0,0,0.72);
       line-height: 1.65;
     }
@@ -714,24 +725,35 @@
       <div class="cards-grid">
 
         <div class="card">
-          <h3>Charm Workshop</h3>
-          <p>Guests paint Sip Margs ceramic charms: mini margarita glasses with a salt rim, lime wedge slices, a tiny cactus in a terracotta pot, or a yellow SIP MORE banner. Every charm different. Every charm Instagrammable.</p>
+          <img class="card-photo" src="photos/fbcfbb_image0.png" alt="Sip Margs ceramic charm keychain" loading="lazy" />
+          <div class="card-body">
+            <h3>Charm Workshop</h3>
+            <p>Guests paint Sip Margs ceramic charms: mini margarita glasses with a salt rim, lime wedge slices, a tiny cactus in a terracotta pot, or a SIP MORE banner. Every charm different. Every charm Instagrammable.</p>
+          </div>
         </div>
 
         <div class="card">
-          <h3>Lighter Casings</h3>
-          <p>Custom ceramic lighter covers painted on the spot. Functional, personal, and impossible to leave behind.</p>
+          <img class="card-photo" src="photos/1dbeab_image0.png" alt="Sip Margs ceramic lighter casing" loading="lazy" />
+          <div class="card-body">
+            <h3>Lighter Casings</h3>
+            <p>Custom ceramic lighter covers painted on the spot. Functional, personal, and impossible to leave behind.</p>
+          </div>
         </div>
 
         <div class="card">
-          <h3>Trinket Dishes</h3>
-          <p>Pre-made dishes stamped with Sip Margs branding. Guests add color and personality. Done in minutes, remembered forever.</p>
+          <img class="card-photo" src="photos/7926c4_image0.png" alt="Sip Margs ceramic trinket dish" loading="lazy" />
+          <div class="card-body">
+            <h3>Trinket Dishes</h3>
+            <p>Pre-made dishes stamped with Sip Margs branding. Guests add color and personality. Done in minutes, remembered forever.</p>
+          </div>
         </div>
 
         <div class="card card-teal">
-          <span class="premium-badge">PREMIUM TIER</span>
-          <h3>Clay Sculpting</h3>
-          <p>Guests hand-build from scratch. Atelier Alma fires and ships the finished piece after Coachella. The ultimate keepsake.</p>
+          <div class="card-body">
+            <span class="premium-badge">PREMIUM TIER</span>
+            <h3>Clay Sculpting</h3>
+            <p>Guests hand-build from scratch. Atelier Alma fires and ships the finished piece after Coachella. The ultimate keepsake.</p>
+          </div>
         </div>
 
       </div>
